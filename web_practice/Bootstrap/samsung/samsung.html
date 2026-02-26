@@ -7,20 +7,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
       .logo {
-        width: 200px;
-        height: 50px;
+        width: 150px;
+        height: 40px;
       }
-      .body {
-        font-style: sans-serif;
+      body {
+        font-family: sans-serif;
+        height: 3000px;
+        background-color: black;
       }
       .galaxy {
         width: 100%;
-        height: 800px;
+        height: 900px;
         object-fit: cover;
         object-position: center;
       }
       .navbar .has-megamenu {
         position: static; /* 부모 기준(relative)을 해제하여 화면 전체 너비를 쓰게 함 */
+      }
+
+      .nav-item {
+        font-size: 0.9rem;
       }
 
       .mega-menu {
@@ -32,13 +38,53 @@
         border: none;       /* 테두리 제거 */
         box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 그림자 효과 */
       }
+
+      /* 검색창 배경 및 텍스트 스타일 */
+      .search-input {
+        background-color: rgba(255, 255, 255, 0.1) !important; /* 배경만 반투명하게 (30%는 너무 밝을 수 있어 10~20% 추천) */
+        color: white;               /* 사용자가 입력하는 글자색 */
+        border: 1px solid white;    /* 하얀색 테두리 */
+        border-radius: 50px;        /* 둥근 테두리 */
+        height: 40px;
+        width: 200px;               
+        padding-left: 40px;         /* ⭐️ 왼쪽에 돋보기 아이콘이 들어갈 공간 비워두기 */
+        padding-right: 15px;
+        outline: none;              /* 클릭했을 때 기본으로 생기는 파란 테두리 없애기 */
+      }
+
+      /* placeholder(미리보기 글씨) 하얀색으로 변경 */
+      .search-input::placeholder {
+        color: white;
+        opacity: 0.8; /* 약간 덜 진한 하얀색으로 설정 */
+      }
+      
+      .btn-secondary {
+        width: 300px;
+        height: 70px;
+        border-radius: 50px;
+      }
+
+      .samsung-btn {
+        background-color: #2a2a2a; /* 이미지와 가장 유사한 다크 그레이 */
+        color: white;
+        width: 300px;              /* 두 버튼의 크기를 똑같이 맞추기 위해 고정 너비 사용 */
+        border: 1px solid #2a2a2a;
+        transition: all 0.2s;     /* 부드러운 호버 효과 */
+      }
+
+      /* 마우스를 올렸을 때 살짝 밝아지는 효과 */
+      .samsung-btn:hover {
+        background-color: #3a3a3a;
+        color: white;
+        border-radius: 50px;
+      }
     </style>
   </head>
   <body>
     <!-- 네비게이션 바 -->
-    <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
+    <nav class="navbar navbar-expand-lg bg-transparent fixed-top" style="padding-left: 50px;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img class="logo" src="Samsung_Orig_Wordmark_WHITE_RGB.png" alt=""></a>
+        <a class="navbar-brand " href="#"><img class="logo" src="Samsung_Orig_Wordmark_WHITE_RGB.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -104,7 +150,102 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                주방가전
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                리빙 가전
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                PC/주변기기
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                하만
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                웨어러블
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                소모품/액세서리
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                AI구독클럽
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
           </ul>
+          <!-- 우측 검색창 및 아이콘 -->
+          <div class="position-relative" style="display: inline-block; margin-right: 50px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="position-absolute top-50 translate-middle-y" style="left: 15px;" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="갤럭시 S26 울트라">
+            <a href="#" class="text-white ms-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </svg>
+            </a>
+
+            <a href="#" class="text-white ms-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </nav>
@@ -112,7 +253,108 @@
     <!-- header -->
     <header>
       <img class="galaxy" src="galaxy-s26-ultra-features-kv.jpg" alt="">
+      <div class="position-absolute text-white text-center w-100" style="right: 25%; top: 25%;">
+        <p class="fw-bold fs-3 mb-2">새롭게 선보이는</p>
+        <h1 class="display-4 fw-bold mb-3">Galaxy S26 Ultra</h1>
+        <img class="mb-4" src="galaxy-s26-ultra-features-kv-ai-text.png" style="width: 250px; height: 50px;" alt=""><br>
+        <span class="button" style="border: 1px white solid; padding: 5px 20px 10px; border-radius: 50px;">Coming soon</span>
+      </div>
     </header>
+
+    <!-- 본문 시작 -->
+    <div style="height: 700px;">
+      <div class="position-relative">
+        <div class="position-absolute start-50 w-100 translate-middle-x fs-3 text-white text-center" style="font-weight: 500; top: 150px;">
+          놀라운 AI폰, 갤럭시 S26울트라를 소개합니다.<br>
+          AI경험을 한층 높여줄 맞춤형 프로세서와 놀랍도록 선명한 카메라 시스템,<br>
+          그리고 세계 최초로 모바일 기기에 내장된 프라이버시 디스플레이까지.<br>
+          이제 손 안에서 일상의 모든 순간이 더욱 풍요로워집니다.
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="text-primary text-center fs-5">새로운 AI 폰을 만나보세요</p>
+    <!-- 본문 carousel -->
+    <div class="row justify-content-center overflow-hidden" style="height: 700px;">
+      <div class="col-12 col-lg-8 peeking-carousel-wrapper">
+        <div id="peekingCarousel" class="carousel slide peeking-carousel" data-bs-ride="carousel">
+          
+          <div class="carousel-indicators" style="top: 550px;;">
+              <button type="button" data-bs-target="#peekingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#peekingCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#peekingCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <p class="text-white text-center display-4 fw-bold mb-5">간결한 디자인</p>
+              <video class="d-block w-100 rounded-4" autoplay loop muted playsinline>
+                <source src="galaxy-s26-ultra-features-highlights-refined-design.webm" type="video/webm">
+                브라우저가 동영상을 지원하지 않습니다.
+              </video>
+              <p class="mt-3 fs-5 fw-bold text-white" style="padding-left: 10px;">세련된 디자인으로 기기와 매끄럽게 이어지는 새로운 앰비언트 아일랜드를 소개합니다.</p>
+            </div>
+
+            <div class="carousel-item">
+              <p class="text-white text-center display-4 fw-bold mb-5">프라이버시 디스플레이</p>
+              <video class="d-block w-100 rounded-4" autoplay loop muted playsinline>
+                <source src="galaxy-s26-ultra-features-highlights-privacy-display-v2.webm" type="video/webm">
+                브라우저가 동영상을 지원하지 않습니다.
+              </video>
+              <p class="mt-3 fs-5 fw-bold text-white" style="padding-left: 10px;">
+                내장형 프라이버시 디스플레이로 설정 화면이나 잠금 화면, 보안 파일을 열 때 개인 정보를 보호해 보세요. <br>
+                화면 전체에 적용할 수 있고 특정 앱이나 알림 영역, 또는 PIN,패턴,암호 입력시에만 선택적으로 적용할 수도 있습니다.</p>
+            </div>
+
+            <div class="carousel-item">
+              <p class="text-white text-center display-4 fw-bold mb-5">성능</p>
+              <video class="d-block w-100 rounded-4" autoplay loop muted playsinline>
+                <source src="galaxy-s26-ultra-features-highlights-performance-a.webm" type="video/webm">
+                브라우저가 동영상을 지원하지 않습니다.
+              </video>
+              <p class="mt-3 fs-5 fw-bold text-white" style="padding-left: 10px;">
+                갤럭시에 최적화된 맞춤형 프로세서를 적용해 역대 가장 강력한 성능을 제공하며, <br>
+                AI 성능 향상을 위해 개선된 NPU,GPU,CPU를 탑재했습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center gap-4 my-5">
+  
+      <button type="button" class="btn rounded-pill samsung-btn px-4 py-3 d-flex align-items-center justify-content-between">
+        
+        <div class="d-flex align-items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
+          </svg>
+          <span class="fw-bold fs-6">갤럭시 간편보상 프로그램</span>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+      </button>
+
+      <button type="button" class="btn rounded-pill samsung-btn px-4 py-3 d-flex align-items-center justify-content-between">
+        
+        <div class="d-flex align-items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+          </svg>
+          <span class="fw-bold fs-6">삼성케어플러스</span>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+      </button>
+
+    </div>
+
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
