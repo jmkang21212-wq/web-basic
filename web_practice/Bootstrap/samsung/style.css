@@ -1,0 +1,13 @@
+/* 메가 메뉴 스타일 */
+.navbar .has-megamenu {
+  position: static; /* 부모 기준을 해제하여 화면 전체 너비를 쓰게 함 */
+}
+
+.mega-menu {
+  width: 100%;        /* 화면 꽉 차게 */
+  margin-top: 0;      /* 네비게이션 바와 딱 붙게 */
+  border-radius: 0;   /* 둥근 모서리 제거 */
+  padding: 20px 0;    /* 내부 여백 */
+  border: none;       /* 테두리 제거 */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 그림자 효과 */
+}

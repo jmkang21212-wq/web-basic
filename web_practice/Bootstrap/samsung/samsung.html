@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+      .logo {
+        width: 200px;
+        height: 50px;
+      }
+      .body {
+        font-style: sans-serif;
+      }
+      .galaxy {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .navbar .has-megamenu {
+        position: static; /* 부모 기준(relative)을 해제하여 화면 전체 너비를 쓰게 함 */
+      }
+
+      .mega-menu {
+        width: 100%;        /* 너비를 화면 꽉 차게 */
+        left: 0;            /* 왼쪽 끝에 딱 붙게 */
+        margin-top: 0;      /* 메뉴바와 틈 없이 붙게 */
+        border-radius: 0;   /* 모서리 둥글지 않게 */
+        padding: 30px;      /* 내부 여백 */
+        border: none;       /* 테두리 제거 */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 그림자 효과 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="logo" src="Samsung_Orig_Wordmark_WHITE_RGB.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-white">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                기획전
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown has-megamenu">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                모바일
+              </a>
+              
+              <div class="dropdown-menu mega-menu bg-white text-dark">
+                <div class="container">
+                  <div class="row">
+                    
+                    <div class="col-md-3 text-center">
+                      <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="스마트폰">
+                      <p class="fw-bold">갤럭시 S26</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <img src="https://via.placeholder.com/150" class="img-fluid mb-2" alt="폴더블">
+                      <p class="fw-bold">갤럭시 Z 폴드</p>
+                    </div>
+
+                    <div class="col-md-3">
+                      <h6 class="fw-bold mb-3 text-primary border-bottom pb-2">스마트폰 전체</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item px-0" href="#">갤럭시 S 시리즈</a></li>
+                        <li><a class="dropdown-item px-0" href="#">갤럭시 Z 시리즈</a></li>
+                        <li><a class="dropdown-item px-0" href="#">갤럭시 A 시리즈</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                      <h6 class="fw-bold mb-3 text-primary border-bottom pb-2">추천 제품</h6>
+                      <ul class="list-unstyled">
+                        <li><a class="dropdown-item px-0" href="#">갤럭시 탭 S10</a></li>
+                        <li><a class="dropdown-item px-0" href="#">갤럭시 워치7</a></li>
+                        <li><a class="dropdown-item px-0" href="#">갤럭시 버즈3</a></li>
+                      </ul>
+                    </div>
+
+                  </div> </div> </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                TV/영상 음향
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- header -->
+    <header>
+      <img class="galaxy" src="galaxy-s26-ultra-features-kv.jpg" alt="">
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
